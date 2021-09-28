@@ -1,0 +1,142 @@
+.product {
+  margin: 0 auto !important;
+
+  background-color: #dde1e7;
+  border-radius: 50px;
+  width: 250px;
+  height: 400px;
+  box-shadow: inset -3px -3px 5px #ffffff70, inset 1px 1px 10px #00000070;
+  transition: box-shadow 2s ease-in-out;
+  cursor: pointer;
+
+  h2 {
+    text-align: center;
+    font-size: 2.1rem;
+  }
+  h3 {
+    text-align: center;
+    opacity: 30%;
+  }
+}
+.product_img_div {
+  display: flex;
+  align-items: center;
+  height: 50%;
+  justify-content: center;
+}
+.product_img_backdrop {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: wheat;
+
+  transform: translateY(10%);
+  img {
+    transform: translateX(-20%) translateY(0%) rotate(-35deg);
+    transition: all 0.5s ease-in;
+  }
+}
+.product:hover {
+  box-shadow: -3px -3px 10px #00000020, 3px 3px 15px #00000020;
+  transform: translateY(-5px) !important;
+  img {
+    transform: translateX(-15%) translateY(0%) rotate(0deg) scale(1.1);
+  }
+  .card-price {
+    transform: translateX(-85%) translateY(-25%) rotate(0deg) scale(2);
+  }
+  .card-price:before {
+    border: 0 !important;
+  }
+}
+.product_desc {
+  overflow: scroll;
+  padding: 15px 5px;
+  // overflow-y: scroll;
+  height: 100px;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+.product_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 5px;
+    height: 40px;
+    border-radius: 50px;
+  }
+  button:nth-child(1) {
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(
+      135deg,
+      rgba(42, 4, 85, 1) 0%,
+      rgba(229, 22, 106, 1) 50%,
+      rgba(133, 10, 152, 1) 100%
+    );
+    width: 90%;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  button:nth-child(2) {
+    background-color: transparent;
+    width: 30%;
+  }
+}
+.card-price {
+  display: inline-block;
+  transform: rotate(300deg);
+  width: auto;
+  left: 29%;
+  top: -30%;
+  transition: all 0.5s ease-in;
+
+  height: 25px;
+  position: absolute;
+  background-color: #333;
+  -webkit-border-radius: 3px 4px 4px 3px;
+  -moz-border-radius: 3px 4px 4px 3px;
+  border-radius: 3px 4px 4px 3px;
+
+  border-left: 1px solid #333;
+
+  /* This makes room for the triangle */
+  margin-left: 35px;
+  position: relative;
+
+  color: white;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+  padding: 0 10px 0 10px;
+}
+
+/* Makes the triangle */
+.card-price:before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: -19px;
+  width: 0;
+  height: 0;
+  border-radius: 3px 4px 4px 3px;
+  border-top: 10.5px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 20.5px solid #333;
+}
+
+.Fav:hover {
+  color: rgb(189, 2, 2) !important;
+}

@@ -1,0 +1,18 @@
+nav {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 100px;
+  // position: absolute;
+  height: 10vh !important;
+}
+.nav-links > ul {
+  display: flex;
+  list-style: none;
+}
+.nav-links ul > li {
+  padding: 0px 20px;
+  font-weight: bold;
+  color: #fff;
+}

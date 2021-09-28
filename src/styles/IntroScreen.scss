@@ -1,0 +1,67 @@
+.tagLine {
+  color: #fff;
+  position: relative;
+  top: 20%;
+  left: 15%;
+  div {
+    user-select: none;
+    text-align: justify;
+    line-height: 80px;
+    font-size: 6rem;
+    font-weight: bolder;
+    display: block;
+  }
+  button {
+    margin-top: 7vh;
+    padding: 20px;
+    border-radius: 500px;
+  }
+}
+.HomePage-Wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  min-height: 65vh;
+}
+.backDrop {
+  position: absolute;
+  left: 65%;
+  transform: translateX(-50%);
+  height: 400px;
+  width: 400px;
+  background: linear-gradient(to right, transparent, #fff);
+  border-radius: 50%;
+  opacity: 20%;
+}
+.Available-colors {
+  position: relative;
+  right: 17%;
+  display: flex;
+  flex-direction: column;
+  button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: 10px solid #f4f4f4;
+  }
+  button:nth-child(1) {
+    margin-right: 60px;
+    background: linear-gradient(to top, black, purple);
+  }
+  button:nth-child(2) {
+    margin-left: 10.5px;
+    background: linear-gradient(to top, black, red);
+  }
+  button:nth-child(3) {
+    margin-left: 5px;
+    background: linear-gradient(to top, black, white);
+  }
+}
+.canvas_div {
+  height: 65vh !important;
+  width: 40%;
+}
