@@ -140,3 +140,9 @@
 .Fav:hover {
   color: rgb(189, 2, 2) !important;
 }
+
+.product_rating {
+  input[type="radio"] {
+    display: none;
+  }
+}

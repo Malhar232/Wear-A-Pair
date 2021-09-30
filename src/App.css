@@ -5,6 +5,7 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  cursor: none !important;
 }
 
 .Home {
@@ -21,11 +22,11 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.main_container {
-  /* scroll-snap-type: y mandatory;
+/* .main_container {
+  scroll-snap-type: y mandatory;
   height: 100vh !important;
-  overflow-y: scroll; */
-}
+  overflow-y: scroll;
+} */
 section {
   height: 100vh !important;
   /* scroll-snap-align: start; */
@@ -36,4 +37,33 @@ section {
 .Products {
   z-index: 2 !important;
   height: 200vh !important;
+}
+
+.cursor {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 75% 75%;
+  z-index: 1000 !important;
+}
+.cursor.nav-active {
+  background: rgb(86, 124, 228);
+  transform: scale(3);
+}
+.cursor.explore-active {
+  background: white;
+  transform: scale(3);
+}
+.cursor-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.5rem;
+  transform: translate(-50%, -50%);
 }

@@ -1,5 +1,5 @@
 
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 // import {Link} from 'react-router-dom';
 import {motion} from 'framer-motion'
 import s2 from '../assets/s2.png'
@@ -11,7 +11,10 @@ import {RiStarSFill} from 'react-icons/ri'
 
 
 function Product({Id}){
-  
+    const [rating, setrating] = useState(null)
+    const [fav, setfav] = useState(false)
+    const [Hover, setHover] = useState(null)
+
     const item = {
         hidden: { y: 20, opacity: 0 },
         visible: {
@@ -81,7 +84,7 @@ function Product({Id}){
             <div className="product_img_div">
                 <div className={// eslint-disable-next-line
                 `${'product_img_backdrop'+' product_backdrop_'+Id}`} >
-                <p class="card-price">₹ 1250/-</p>
+                <p className="card-price">₹ 1250/-</p>
                     
                     <img className={// eslint-disable-next-line
                 `${'product_img'+' product_img_'+Id}`}   src={s2} alt={s2} width="200px"/>
@@ -96,12 +99,12 @@ function Product({Id}){
             
                 <br/>
                 <div className="product_rating">
-                    <RiStarSFill  size="1.3em"/><RiStarSFill size="1.3em"/><RiStarSFill size="1.3em"/><RiStarSFill size="1.3em"/><RiStarSFill size="1.3em"/>
+                    {[...Array(5).fill()].map((star,index)=><label><input type="radio" name="rating" value={index+1} onClick={()=>setrating(index+1)}/><RiStarSFill color={index+1<= (rating || Hover)?"#ffc107":"gray"} className="star"  size="1.8em" onMouseEnter={()=>setHover(index+1)} onMouseLeave={()=>setHover(null)}/></label>)}
                 </div>
                 <br/>
                 <div className="product_buttons">
                     <button>Add to cart  <FaShoppingCart size="1.2em" style={{paddingBottom:"2.5px"}}/></button>
-                    <button><AiFillHeart size="2em" color="gray" className="Fav"/></button>
+                    <button onClick={()=>setfav(!fav)}><AiFillHeart size="2em" color={fav?"rgb(189, 2, 2)":"gray"} className="Fav"/></button>
                 </div>
             </div>
 
