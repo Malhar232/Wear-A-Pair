@@ -2,18 +2,16 @@
 import React,{useEffect,useState} from 'react';
 // import {Link} from 'react-router-dom';
 import {motion} from 'framer-motion'
-import s2 from '../assets/s2.png'
 import '../styles/Product.scss';
 // import Grade from 'grade-js'
 import {FaShoppingCart} from 'react-icons/fa'
 import {AiFillHeart} from 'react-icons/ai'
 import {RiStarSFill} from 'react-icons/ri'
-
-
-function Product({Id}){
-    const [rating, setrating] = useState(null)
+// import s2 from '../assets/s2.png'
+function Product({Id,ProductName,ProductImg,Price,Colors,Rating,Fav,Category}){
+    // const [rating, setrating] = useState(null)
     const [fav, setfav] = useState(false)
-    const [Hover, setHover] = useState(null)
+    // const [Hover, setHover] = useState(null)
 
     const item = {
         hidden: { y: 20, opacity: 0 },
@@ -84,22 +82,23 @@ function Product({Id}){
             <div className="product_img_div">
                 <div className={// eslint-disable-next-line
                 `${'product_img_backdrop'+' product_backdrop_'+Id}`} >
-                <p className="card-price">₹ 1250/-</p>
+                <p className="card-price">₹ {Price}/-</p>
                     
                     <img className={// eslint-disable-next-line
-                `${'product_img'+' product_img_'+Id}`}   src={s2} alt={s2} width="200px"/>
+                `${'product_img'+' product_img_'+Id}`} src={ProductImg} alt={ProductImg} width="200px"/>
                 </div>
             </div>
 
             <div className="product_name_div">
-                <h2>Product Name</h2>
+                <h2>{ProductName}</h2>
             </div>
             <div className="product_details_div">
-                <h4>3 Colors Available</h4>
+                <h4>{Colors} Colors Available</h4>
             
                 <br/>
                 <div className="product_rating">
-                    {[...Array(5).fill()].map((star,index)=><label><input type="radio" name="rating" value={index+1} onClick={()=>setrating(index+1)}/><RiStarSFill color={index+1<= (rating || Hover)?"#ffc107":"gray"} className="star"  size="1.8em" onMouseEnter={()=>setHover(index+1)} onMouseLeave={()=>setHover(null)}/></label>)}
+                    {/* {[...Array(5).fill()].map((star,index)=><label key={index+1}><input type="radio" name="rating" value={index+1} onClick={()=>setrating(index+1)}/><RiStarSFill color={index+1<= (rating || Hover)?"#ffc107":"gray"} className="star"  size="1.8em" onMouseEnter={()=>setHover(index+1)} onMouseLeave={()=>setHover(null)}/></label>)} */}
+                    {[...Array(5).fill()].map((star,index)=><RiStarSFill key={index+1} color={index+1<= (Rating)?"#ffc107":"gray"} className="star"  size="1.8em"/>)}
                 </div>
                 <br/>
                 <div className="product_buttons">

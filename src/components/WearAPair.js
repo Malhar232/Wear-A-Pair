@@ -16,11 +16,9 @@ function WearAPair(){
 
     function activeCursor(e) {
       const item = e.target;
-      console.log(item)
 
       if (item.id === "logo" || item.classList.contains("nav-logo")) {
         mouse.classList.add("nav-active");
-        console.log("found")
       } else {
         mouse.classList.remove("nav-active");
       }
